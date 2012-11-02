@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KS1-lc-Nxe">
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="8kQ-q4-RQ2"/>
+                                    <barButtonItem enabled="NO" style="plain" systemItem="action" id="soC-r3-56d">
+                                        <connections>
+                                            <action selector="shareAction:" destination="2" id="iuq-Rk-vep"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XNF-71-syq">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2" id="Jdz-oa-2hR"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XNF-71-syq" firstAttribute="bottom" secondItem="KS1-lc-Nxe" secondAttribute="top" type="default" id="GnB-ht-Lxx"/>
+                            <constraint firstItem="KS1-lc-Nxe" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="T9i-6b-n0g"/>
+                            <constraint firstItem="XNF-71-syq" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="dO5-o0-eHF"/>
+                            <constraint firstItem="XNF-71-syq" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="imD-4Z-4og"/>
+                            <constraint firstItem="KS1-lc-Nxe" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="n9k-bU-7hB"/>
+                            <constraint firstItem="XNF-71-syq" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="say-96-kb2"/>
+                            <constraint firstItem="KS1-lc-Nxe" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="zpe-Pc-Szc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="shareButton" destination="soC-r3-56d" id="YsH-m4-WVW"/>
+                        <outlet property="webView" destination="XNF-71-syq" id="qJC-cY-IRN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-119" y="99"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MQp-k6-o5E">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qLM-T4-J5K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController storyboardIdentifier="HatenaActivityViewController" definesPresentationContext="YES" id="SzK-dq-UOB" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8IG-M1-TGE">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="35r-IM-JgJ" kind="relationship" relationship="rootViewController" id="7VL-yn-k9S"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="391" y="99"/>
+        </scene>
+        <!--Hatena Activity View Controller - Hatena Bookmark-->
+        <scene sceneID="0lU-mk-eP8">
+            <objects>
+                <viewController storyboardIdentifier="" id="35r-IM-JgJ" customClass="HatenaActivityViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kfW-7U-n5f">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iIM-YP-4U9">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="35r-IM-JgJ" id="1qi-g6-73u"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iIM-YP-4U9" firstAttribute="bottom" secondItem="kfW-7U-n5f" secondAttribute="bottom" type="default" id="8JE-jU-NAA"/>
+                            <constraint firstItem="iIM-YP-4U9" firstAttribute="top" secondItem="kfW-7U-n5f" secondAttribute="top" type="default" id="fFN-O2-nY1"/>
+                            <constraint firstItem="iIM-YP-4U9" firstAttribute="leading" secondItem="kfW-7U-n5f" secondAttribute="leading" type="default" id="hLq-E9-i66"/>
+                            <constraint firstItem="iIM-YP-4U9" firstAttribute="trailing" secondItem="kfW-7U-n5f" secondAttribute="trailing" type="default" id="nmW-TB-ADT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Hatena Bookmark" id="1kX-AJ-WY5">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="oAZ-Bm-bRy">
+                            <connections>
+                                <action selector="cancel:" destination="35r-IM-JgJ" id="iCt-3s-BAL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="iIM-YP-4U9" id="Rmh-PW-GRy"/>
+                        <segue destination="qOm-kS-LB5" kind="push" id="Lm4-6a-3JI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="85w-yy-P9A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="881" y="99"/>
+        </scene>
+        <!--Hatena Bookmark Post View Controller-->
+        <scene sceneID="iuo-7h-rD8">
+            <objects>
+                <viewController storyboardIdentifier="HatenaBookmarkPostViewController" id="qOm-kS-LB5" customClass="HatenaBookmarkPostViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Wv-BJ-m91">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eAz-fI-gjr">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eAz-fI-gjr" firstAttribute="top" secondItem="0Wv-BJ-m91" secondAttribute="top" constant="20" symbolic="YES" type="default" id="4tY-J3-Bu4"/>
+                            <constraint firstAttribute="trailing" secondItem="eAz-fI-gjr" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="IuT-0G-xLQ"/>
+                            <constraint firstItem="eAz-fI-gjr" firstAttribute="leading" secondItem="0Wv-BJ-m91" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Z4g-6t-iaH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Wu2-FC-oR1">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="UF7-Da-gVF">
+                            <connections>
+                                <action selector="done:" destination="qOm-kS-LB5" id="wHZ-hE-Ffo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="textField" destination="eAz-fI-gjr" id="hFi-YZ-PEQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="46A-Io-nEX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1357" y="99"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="HatenaActivityViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HatenaActivityViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel:"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="HatenaBookmarkPostViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HatenaBookmarkPostViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="shareAction:"/>
+                <relationship kind="outlet" name="shareButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
