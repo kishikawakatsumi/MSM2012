@@ -28,8 +28,13 @@
 {
     SKStoreProductViewController *controller = [[SKStoreProductViewController alloc] init];
     controller.delegate = self;
+#if 1
     [controller loadProductWithParameters:@{SKStoreProductParameterITunesItemIdentifier : @"290464595"}
                           completionBlock:nil];
+#elif
+    [controller loadProductWithParameters:@{SKStoreProductParameterITunesItemIdentifier : @"290464598"}
+                          completionBlock:nil];
+#endif
     [self presentViewController:controller animated:YES completion:nil];
 }
 
